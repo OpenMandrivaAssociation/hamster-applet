@@ -1,6 +1,6 @@
 Name:           hamster-applet
 Version:        2.23.6
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        Time tracking applet
 
 Group:          Graphical desktop/GNOME
@@ -22,7 +22,7 @@ Requires:  	python-sqlite2
 Requires:       gnome-python-applet
 Requires:       gnome-python-canvas
 Requires:       gnome-python-gnomevfs
-Requires:       gnome-python2-gconf
+Requires:       gnome-python-gconf
 Requires:       gnome-python-evolution
 Requires:       pygtk2.0-libglade
 
