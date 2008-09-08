@@ -1,6 +1,6 @@
 Name:           hamster-applet
-Version:        2.23.91
-Release:        %mkrel 2
+Version:        2.23.92
+Release:        %mkrel 1
 Summary:        Time tracking applet
 
 Group:          Graphical desktop/GNOME
