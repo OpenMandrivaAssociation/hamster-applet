@@ -1,12 +1,12 @@
 Name:           hamster-applet
-Version:        2.24.0
+Version:        2.24.1
 Release:        %mkrel 1
 Summary:        Time tracking applet
 
 Group:          Graphical desktop/GNOME
 License:        GPLv3+
 URL:            http://code.google.com/p/projecthamster/
-Source0:        http://download.gnome.org/sources/hamster-applet/%{name}-%{version}.tar.bz2
+Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires:  pygtk2.0-devel
