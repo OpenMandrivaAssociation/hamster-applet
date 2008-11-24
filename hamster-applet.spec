@@ -1,5 +1,5 @@
 Name:           hamster-applet
-Version:        2.24.1
+Version:        2.24.2
 Release:        %mkrel 1
 Summary:        Time tracking applet
 
