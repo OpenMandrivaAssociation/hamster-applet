@@ -16,6 +16,7 @@ BuildRequires:  gnome-python-applet
 BuildRequires:  libxscrnsaver-devel
 BuildRequires:  libgnome-window-settings-devel
 BuildRequires:  intltool
+BuildRequires:  gnome-doc-utils >= 0.17.3
 
 Requires:       pygtk2.0
 Requires:  	python-sqlite2
