@@ -1,5 +1,5 @@
 Name:           hamster-applet
-Version:        2.29.6
+Version:        2.29.90
 Release:        %mkrel 1
 Summary:        Time tracking applet
 
@@ -26,6 +26,8 @@ Requires:       gnome-python-gnomevfs
 Requires:       gnome-python-gconf
 Requires:       gnome-python-evolution
 Requires:       pygtk2.0-libglade
+Requires(post):  GConf2
+Requires(preun): GConf2
 
 %description
 Time tracking for masses in GNOME.
@@ -35,7 +37,7 @@ Time tracking for masses in GNOME.
 
 
 %build
-%configure2_5x
+%configure2_5x --disable-schemas-install
 %make
 
 
@@ -46,8 +48,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %update_icon_cache hicolor
+%post_install_gconf_schemas hamster-applet
 
 %preun
+%preun_uninstall_gconf_schemas hamster-applet
 
 %postun
 %clean_icon_cache hicolor
@@ -59,6 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING ChangeLog NEWS README
+%{_sysconfdir}/gconf/schemas/hamster-applet.schemas
 %_bindir/gnome-time-tracker
 %_bindir/hamster-standalone
 %_datadir/applications/hamster-standalone.desktop
