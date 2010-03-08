@@ -22,10 +22,10 @@ Requires:       pygtk2.0
 Requires:  	python-sqlite2
 Requires:       gnome-python-applet
 Requires:       gnome-python-canvas
-Requires:       gnome-python-gnomevfs
+Requires:       gnome-python-desktop
 Requires:       gnome-python-gconf
 Requires:       gnome-python-evolution
-Requires:       pygtk2.0-libglade
+Requires:       pygtk2.0
 Requires(post):  GConf2
 Requires(preun): GConf2
 
