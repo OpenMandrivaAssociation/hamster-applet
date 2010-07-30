@@ -1,5 +1,5 @@
 Name:           hamster-applet
-Version:        2.30.2
+Version:        2.31.5
 Release:        %mkrel 1
 Summary:        Time tracking applet
 
@@ -37,13 +37,11 @@ Time tracking for masses in GNOME.
 
 
 %build
-%configure2_5x --disable-schemas-install
-%make
-
+SYSCONFDIR=%_sysconfdir ./waf --prefix=%_prefix configure build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall_std
+./waf install --destdir=%buildroot
 %find_lang %{name} --with-gnome
 
 %post
@@ -62,16 +60,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(-,root,root,-)
-%doc AUTHORS COPYING ChangeLog NEWS README
+%doc AUTHORS COPYING NEWS README
 %{_sysconfdir}/gconf/schemas/hamster-applet.schemas
 %_bindir/gnome-time-tracker
+%_bindir/hamster-client
+%_bindir/hamster-service
 %_bindir/hamster-standalone
 %_datadir/applications/hamster-standalone.desktop
+%_datadir/dbus-1/services/org.gnome.hamster.service
 %{py_platsitedir}/hamster
 %{_libdir}/bonobo/servers/Hamster_Applet.server
 %{_libdir}/hamster-applet
 %{_datadir}/hamster-applet
 %{_datadir}/icons/hicolor/*/apps/hamster-applet.*
-%_datadir/gnome-control-center/keybindings/99-hamster-applet.xml
 
 
