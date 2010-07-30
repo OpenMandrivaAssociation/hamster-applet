@@ -17,7 +17,6 @@ BuildRequires:  libxscrnsaver-devel
 BuildRequires:  libgnome-window-settings-devel
 BuildRequires:  intltool
 BuildRequires:  gnome-doc-utils >= 0.17.3
-
 Requires:       pygtk2.0
 Requires:  	python-sqlite2
 Requires:       gnome-python-applet
@@ -43,17 +42,14 @@ SYSCONFDIR=%_sysconfdir ./waf --prefix=%_prefix configure build
 rm -rf $RPM_BUILD_ROOT
 ./waf install --destdir=%buildroot
 %find_lang %{name} --with-gnome
-
-%post
-%update_icon_cache hicolor
-%post_install_gconf_schemas hamster-applet
+%if %_lib != lib
+mkdir -p %buildroot%_libdir
+mv %buildroot%_prefix/lib/* %buildroot%_libdir
+%endif
 
 %preun
 %preun_uninstall_gconf_schemas hamster-applet
 
-%postun
-%clean_icon_cache hicolor
- 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -69,6 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %_datadir/applications/hamster-standalone.desktop
 %_datadir/dbus-1/services/org.gnome.hamster.service
 %{py_platsitedir}/hamster
+#gw the applet is the reason this is not a noarch package:
 %{_libdir}/bonobo/servers/Hamster_Applet.server
 %{_libdir}/hamster-applet
 %{_datadir}/hamster-applet
