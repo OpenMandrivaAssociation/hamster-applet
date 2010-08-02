@@ -1,5 +1,5 @@
 Name:           hamster-applet
-Version:        2.31.5
+Version:        2.31.6
 Release:        %mkrel 1
 Summary:        Time tracking applet
 
@@ -59,10 +59,12 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS COPYING NEWS README
 %{_sysconfdir}/gconf/schemas/hamster-applet.schemas
 %_bindir/gnome-time-tracker
-%_bindir/hamster-client
+%_bindir/hamster-cli
 %_bindir/hamster-service
-%_bindir/hamster-standalone
-%_datadir/applications/hamster-standalone.desktop
+%_bindir/hamster-time-tracker
+%_datadir/applications/hamster-applet.desktop
+%_datadir/applications/hamster-time-tracker.desktop
+%_datadir/docky/helpers/*
 %_datadir/dbus-1/services/org.gnome.hamster.service
 %{py_platsitedir}/hamster
 #gw the applet is the reason this is not a noarch package:
