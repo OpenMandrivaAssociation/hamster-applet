@@ -1,5 +1,5 @@
 Name:           hamster-applet
-Version:        2.31.6
+Version:        2.31.90
 Release:        %mkrel 1
 Summary:        Time tracking applet
 
@@ -64,6 +64,9 @@ rm -rf $RPM_BUILD_ROOT
 %_bindir/hamster-time-tracker
 %_datadir/applications/hamster-applet.desktop
 %_datadir/applications/hamster-time-tracker.desktop
+%_datadir/dockmanager/metadata/hamster_control.py.info
+%_datadir/dockmanager/scripts/hamster_control.py
+%_datadir/gnome-control-center/keybindings/90-hamster-applet.xml
 %_datadir/docky/helpers/*
 %_datadir/dbus-1/services/org.gnome.hamster.service
 %{py_platsitedir}/hamster
