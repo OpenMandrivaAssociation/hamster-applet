@@ -1,6 +1,6 @@
 Name:           hamster-applet
 Version:        2.32.1
-Release:        %mkrel 1
+Release:        %mkrel 2
 Summary:        Time tracking applet
 
 Group:          Graphical desktop/GNOME
@@ -36,7 +36,7 @@ Time tracking for masses in GNOME.
 
 
 %build
-SYSCONFDIR=%_sysconfdir ./waf --prefix=%_prefix configure build
+SYSCONFDIR=%_sysconfdir ./waf --prefix=%_prefix --libdir=%_libdir configure build
 
 %install
 rm -rf $RPM_BUILD_ROOT
