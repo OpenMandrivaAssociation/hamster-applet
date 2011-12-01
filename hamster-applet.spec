@@ -39,7 +39,7 @@ Time tracking for masses in GNOME.
 SYSCONFDIR=%_sysconfdir ./waf --prefix=%_prefix --libdir=%_libdir configure build
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 ./waf install --destdir=%buildroot
 %find_lang %{name} --with-gnome
 %if %_lib != lib
@@ -51,7 +51,7 @@ mv %buildroot%_prefix/lib/* %buildroot%_libdir
 %preun_uninstall_gconf_schemas hamster-applet
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 
 %files -f %{name}.lang
