@@ -5,7 +5,7 @@ Summary:        Time tracking applet
 
 Group:          Graphical desktop/GNOME
 License:        GPLv3+
-URL:            http://code.google.com/p/projecthamster/
+URL:            https://code.google.com/p/projecthamster/
 Source0:        ftp://ftp.gnome.org/pub/GNOME/sources/%name/%{name}-%{version}.tar.bz2
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root
 
